@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome 5 icons -->
+    <script
+      src="https://kit.fontawesome.com/7c5a9b010c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Nodemailer Contact Form</title>
+  </head>
+  <body>
+    <section class="container-full">
+      <header class="header">
+        <h3 class="logo">
+          <span class="span">
+            <i class="fas fa-wifi custom-wifi"></i>
+            <b class="s1_green">Team</b>
+            <b class="s2_col">speak</b>
+          </span>
+        </h3>
+        <p>Always ready to help! Bring your issue lets give the solution.</p>
+      </header>
+      <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;" class="form">
+          <h3>Get in touch</h3>
+          <div class="form-group">
+            <label for="name" class="label">Name:</label>
+            <input
+              type="text"
+              name="name"
+              class="input"
+              placeholder="your name"
+              id="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Email" class="label">Email Address:</label>
+            <input
+              type="Email"
+              name="email"
+              class="input"
+              placeholder="Your Email Address"
+              id="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="label">Company's name:</label>
+            <input
+              type="text"
+              name="company"
+              class="input"
+              placeholder="Company's name"
+              id="company"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company-email" class="label">
+              Company's Email Address:
+            </label>
+            <input
+              type="text"
+              name="company-email"
+              class="input"
+              placeholder="Company's Email Address"
+              id="company-email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Phone" class="label">Phone no:</label>
+            <input
+              type="tel"
+              name="phone"
+              class="input"
+              value="+234"
+              id="phone"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="txt-msg" class="label">Message:</label>
+            <textarea
+              name="txt-msg"
+              class="textarea input"
+              id="txt-msg"
+              rows="0"
+              cols="0"
+              placeholder="What can we do for you?"
+            ></textarea>
+          </div>
+
+          <!-- Policy agreement -->
+          <div class="policy-flex-container">
+            <div class="policy-inner-wrapper">
+              <div class="flex-span">
+                <p class="policy-par">
+                  The information you provide on this form will be used by
+                  Teamspeak Development community to get in touch with you about
+                  your enquiry. Teamspeak is part of the Global IT Firm
+                  companies. All information will be processed in accordance
+                  with Teamspeak Privacy Policy
+                </p>
+              </div>
+
+              <!-- First checkbox -->
+              <span class="form_controls-checkbox">
+                <input
+                  type="checkbox"
+                  name="agree_policy_emials"
+                  class="checkbox-input"
+                  id="msgEmails"
+                  value="true"
+                />
+                <label for="msgEmails" class="checkbox-label-txt">
+                  I consent to receiving information (by email, phone or
+                  text/SMS) about the products and services offered by Teamspeak
+                  and from other IT Firm organisations.
+                </label>
+              </span>
+
+              <!-- Second checkbox -->
+              <span class="form_controls-checkbox">
+                <input
+                  type="checkbox"
+                  name="agree_policy_whatsapp"
+                  class="checkbox-input"
+                  id="msgwhatsapp"
+                  value="true"
+                />
+                <label for="msgwhatsapp" class="checkbox-label-txt">
+                  I would like to receive WhatsApp updates specific to my
+                  Business/product of interest, application updates and
+                  approaching deadlines from Teamspeak.
+                </label>
+              </span>
+            </div>
+          </div>
+
+          <button type="submit" class="button" id="button">Submit</button>
+        </form>
+      </div>
+    </section>
+    <!-- Script -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+      function sendEmail() {
+        Email.send({
+          Host: 'smtp.elasticemail.com',
+          Username: 'sixtusushrey@gmail.com',
+          Password: 'weszymnvunywlkmm',
+          To: 'sixtusushahemba97@gmail.com',
+          From: document.getElementById('email').value,
+          Subject: 'New Client Form Enquiry',
+          Body: 'And this is the body',
+        }).then((message) => alert(message))
+      }
+    </script>
+    <!-- generated pass -->
+    <!-- 9e31201d-9696-4563-b9fd-26ab396a6a7e -->
+    <!-- API key -->
+    <!-- 3A66EFC3504D6198ACB01F4DB359D71621907044815ABB2133D33DCF1AE23D0B928578563109AF7AAB77D11E7C174389 -->
+  </body>
+</html>
